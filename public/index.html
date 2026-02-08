@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AIMusic Recorder</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="container">
+      <header>
+        <h1>อัดเสียงจาก AIMusicGen แล้วแปลงเป็น MP4</h1>
+        <p>
+          ใส่ลิงก์เพลงจาก <strong>aimusicgen.ai</strong> แล้วกดเริ่มอัดเสียง ระบบจะเปิดลิงก์ให้เอง
+          และขอให้คุณเลือกแท็บเพื่อแชร์เสียง จากนั้นสามารถดาวน์โหลดเป็นไฟล์ MP4 ได้เลย
+        </p>
+      </header>
+
+      <section class="card">
+        <label for="share-link">ลิงก์เพลงจาก AIMusicGen</label>
+        <div class="link-row">
+          <input
+            id="share-link"
+            type="url"
+            placeholder="https://aimusicgen.ai/share/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+            autocomplete="off"
+          />
+        </div>
+        <p class="hint">
+          เมื่อเริ่มอัดเสียง ระบบจะเปิดลิงก์ในแท็บใหม่ให้โดยอัตโนมัติ
+        </p>
+      </section>
+
+      <section class="card">
+        <div class="controls">
+          <button id="start-record" type="button" class="primary">เริ่มอัดเสียง</button>
+          <button id="stop-record" type="button" class="secondary" disabled>หยุดอัดเสียง</button>
+        </div>
+        <div class="status">
+          <span id="status-text">พร้อมใช้งาน</span>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>ตัวอย่างผลลัพธ์</h2>
+        <video id="preview" controls></video>
+        <a id="download-link" class="download" download="aimusic-recording.mp4">ดาวน์โหลด MP4</a>
+      </section>
+
+      <section class="card tips">
+        <h2>วิธีใช้งาน</h2>
+        <ol>
+          <li>ใส่ลิงก์เพลงจาก <code>aimusicgen.ai/share/...</code></li>
+          <li>กด <strong>เริ่มอัดเสียง</strong> ระบบจะเปิดเพลงในแท็บใหม่ให้เอง</li>
+          <li>เลือกแชร์เสียงของแท็บ AIMusicGen แล้วกดเริ่มแชร์</li>
+          <li>เมื่ออัดเสร็จ กด <strong>หยุดอัดเสียง</strong> เพื่อแปลงเป็น MP4 และดาวน์โหลด</li>
+        </ol>
+        <p class="note">
+          ถ้าเห็นข้อความว่าไม่สามารถเริ่มอัดเสียงได้ โปรดเปิดหน้านี้ผ่าน <strong>HTTPS</strong> หรือ
+          <strong>localhost</strong> และใช้เบราว์เซอร์ที่รองรับ (เช่น Chrome/Edge)
+        </p>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
