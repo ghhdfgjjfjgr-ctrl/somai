@@ -1,0 +1,13 @@
+{
+  "name": "aimusic-recorder",
+  "version": "1.0.0",
+  "description": "Record audio from aimusicgen.ai and export as MP4",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "multer": "^1.4.5-lts.1"
+  }
+}
